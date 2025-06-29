@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Sticker Tag Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="loading">
+        <div class="spinner"></div>
+        <p>Loading Game...</p>
+    </div>
+    
+    <div id="game-container">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div id="ui-overlay">
+            <div id="player-info" class="ui-panel">
+                <div id="player-avatar">😀</div>
+                <div>
+                    <div id="player-name">Player</div>
+                    <div id="status" class="runner">Safe</div>
+                </div>
+                <div id="powerup-indicator">🚀 Speed Boost</div>
+            </div>
+            
+            <div id="game-info" class="ui-panel">
+                <div id="players-count">Players: 1</div>
+                <div id="round-timer">2:45</div>
+            </div>
+        </div>
+        
+        <div id="notifications"></div>
+        
+        <div id="mobile-controls">
+            <div id="joystick"></div>
+            <div class="action-buttons">
+                <button id="catch-btn" class="action-btn" aria-label="Catch">CATCH</button>
+                <button id="powerup-btn" class="action-btn" aria-label="Use Power-up" disabled>POWER</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Core utilities -->
+    <script src="js/core/vector3.js"></script>
+    <script src="js/core/math-utils.js"></script>
+    <script src="js/core/camera.js"></script>
+
+    <!-- Rendering system -->
+    <script src="js/rendering/texture-generator.js"></script>
+    <script src="js/rendering/sky-renderer.js"></script>
+    <script src="js/rendering/ground-renderer.js"></script>
+    <script src="js/rendering/building-renderer.js"></script>
+    <script src="js/rendering/player-renderer.js"></script>
+    <script src="js/rendering/renderer.js"></script>  <!-- This should be IN the rendering folder -->
+
+    <!-- Game logic -->
+    <script src="js/game/player.js"></script>
+    <script src="js/game/input.js"></script>
+    <script src="js/game/powerups.js"></script>
+    <script src="js/game/network.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
